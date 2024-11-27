@@ -1,0 +1,7 @@
+FROM build-container
+
+RUN apt-get update && \
+    apt-get install -y ninja-build gettext cmake unzip curl build-essential
+
+CMD ["/app/build.sh"]
+
