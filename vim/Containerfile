@@ -1,0 +1,6 @@
+FROM build-container
+
+RUN apt-get install -y git make clang libtool-bin
+
+CMD ["/app/build.sh"]
+
