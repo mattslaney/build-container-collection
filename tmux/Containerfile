@@ -1,0 +1,6 @@
+FROM build-container
+
+RUN apt-get install -y autoconf automake pkg-config libevent-dev bison libncurses-dev
+
+CMD ["/app/build.sh"]
+
