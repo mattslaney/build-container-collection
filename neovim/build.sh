@@ -20,5 +20,10 @@ cd neovim
 git checkout stable
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 #make test
-make install DESTDIR=/app/dist
+if [ "$1" = "--deb" ]; then
+    apt-get install -y file
+    cd build && cpack -G DEB && cp nvim-linux64.deb /app/dist
+else
+    make install DESTDIR=/app/dist
+fi
 
